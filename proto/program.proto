@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package substreams.v1.program;
+
+message Data {
+    repeated InitializeCandidate initialize_candidate_list = 1;
+    repeated InitializePoll initialize_poll_list = 2;
+    repeated Vote vote_list = 3;
+}
+
+
+message InitializeCandidate {
+  string trx_hash = 1;
+    string candidate_name = 2;
+    uint64 _poll_id = 3;
+    string acct_signer = 4;
+    string acct_poll = 5;
+    string acct_candidate = 6;
+}
+message InitializePoll {
+  string trx_hash = 1;
+    uint64 poll_id = 2;
+    string description = 3;
+    uint64 poll_start = 4;
+    uint64 poll_end = 5;
+    string acct_signer = 6;
+    string acct_poll = 7;
+}
+message Vote {
+  string trx_hash = 1;
+    string _candidate_name = 2;
+    uint64 _poll_id = 3;
+    string acct_signer = 4;
+    string acct_poll = 5;
+    string acct_candidate = 6;
+}
+

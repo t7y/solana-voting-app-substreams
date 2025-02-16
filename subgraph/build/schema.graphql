@@ -1,0 +1,11 @@
+type Poll @entity {
+    id: ID!
+    candidates: [Candidate!] @derivedFrom(field: "poll")
+}
+
+type Candidate @entity {
+    id: ID!
+    name: String!
+    count: Int!
+    poll: Poll!
+}
