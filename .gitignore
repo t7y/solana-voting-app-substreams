@@ -2,3 +2,4 @@
 target/
 .substreams.env
 my-project-v0.1.0.spkg
+replay.log
